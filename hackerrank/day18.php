@@ -69,18 +69,21 @@ class Solution {
 //A char popCharacter() method that pops and returns the character at the top of the stack instance variable.
     public function  popCharacter(){
 
+        $valor = array_shift($this->stack);
+       return $valor;
     }
 
 //A char dequeueCharacter() method that dequeues and returns the first character in the queue instance variable.
     public function  dequeueCharacter(){
-
+        $valor = array_shift($this->queue);
+        return $valor;
     }
 
 }
 
 // read the string s
-$s = fgets(STDIN);
-
+//$s = fgets(STDIN);
+$s ="racecar";
 // create the Solution class object p
 $obj = new Solution();
 
@@ -92,4 +95,23 @@ for ($i = 0; $i < $len; $i++) {
     $obj->pushCharacter($s{$i});
     $obj->enqueueCharacter($s{$i});
 }
+
+/*
+pop the top character from stack
+dequeue the first character from queue
+compare both the characters
+*/
+for ($i = 0; $i < $len / 2; $i++) {
+    if($obj->popCharacter() != $obj->dequeueCharacter()){
+        $isPalindrome = false;
+
+        break;
+    }
+}
+
+//finally print whether string s is palindrome or not.
+if ($isPalindrome)
+    echo "The word, ".$s.", is a palindrome.";
+else
+    echo "The word, ".$s.", is not a palindrome.";
 ?>
