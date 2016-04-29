@@ -53,3 +53,81 @@ T=4T=4, so the locked code in the editor will be inserting 44 nodes.
 The list is initially empty, so headhead is null; accounting for this, our code returns a new node containing the data value 22 as the headhead of our list. We then create and insert nodes 33, 44, and 11 at the tail of our list. The resulting list returned by the last call to insertinsert is [2,3,4,1][2,3,4,1], so the printed output is 2 3 4 1.
  *
  */
+
+
+class Node{
+    public $data;
+    public $next;
+    function __construct($d)
+    {
+        $this->data = $d;
+        $this->next = NULL;
+    }
+}
+
+class Solution{
+
+    private $count= array();
+
+    /* Link to the last node in the list */
+    private $lastNode;
+
+    function insert($head,$data){
+        //complete this method
+
+        if($head==NULL){
+            $newnode = new Node($data);
+
+            $newnode->next= $head;
+            $head = $newnode;
+
+            $this->count++;
+
+        }else{
+
+            $start=$head;
+            while($start){
+                echo $start->data,' ';
+                $start=$start->next;
+                if($start==NULL){
+                    $start->next = $newnode;
+                    break;
+                }
+            }
+            $head->next = $newnode;
+
+        }
+
+        return $head;
+    }
+
+    function display($head){
+        $start=$head;
+        while($start){
+            echo $start->data,' ';
+            $start=$start->next;
+        }
+    }
+}
+$handle = fopen("./input.txt", "r");
+$T=intval(fgets($handle));
+
+/*
+4
+2
+3
+4
+1
+*/
+
+
+$head=null;
+$mylist=new Solution();
+while($T-->0){
+    $data=intval(fgets($handle));
+    $head=$mylist->insert($head,$data);
+}
+$mylist->display($head);
+?>
+
+
