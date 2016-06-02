@@ -68,23 +68,22 @@ fscanf($handle,"%d",$n);
 $c_temp = fgets($handle);
 $c = explode(" ",$c_temp);
 
-function solution ($c){
+function getSolucion ($c){
     $i=0;
-    $movimientos=0;
-    $max=count($c)-1;
-    while($i< $max ) {
+    $solution=0;
+    while($i< count($c)-1) {
 
         if($c[$i+2]==0){
-            $movimientos++;
+            $solution++;
             $i=$i+2;
         }else if($c[$i+1]==0){
-            $movimientos++;
-            $i=$i+1;
+            $solution++;
+            $i++;
         }
     }
-    return $movimientos;
+    return $solution;
 
 }
-echo solution($c);
+echo getSolucion($c);
 
 //array_walk($c,'intval');
