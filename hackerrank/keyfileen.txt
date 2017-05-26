@@ -1,0 +1,243 @@
+Client ID
+3G / WiFi
+The playback on 3G network is not enabled.
+The playback on 3G network is not enabled. You can turn it on in Options> Preferences.
+Warning before playback on 3G network
+You are using 3G network right now. Would you like to play this content?
+Warning message before content play in case the 3G option is activated
+Warning message before content play when 3G function is turned off.
+HBO GO application generates a network traffic. You can set up the preferred network usage (3G or WiFi) mode in the Settings > Preferences.
+HBO GO application generates a network traffic. You can set up the preferred network usage (3 G or WiFi) mode in the Settings &gt; Preferences.
+About the episode
+About the movie
+About the season
+About HBO
+Accept
+Please accept the terms of use and privacy regulations
+Dear @@NICK@@!    Somebody typed a wrong password in the parental control pop up.  Device Identifier:  @@DEVICE@@ [@@PLATFORM@@]    Your parent control setting:  Age: @@RATING@@    Regards,     HBO GO Team
+Parental supervision is violated
+Failed to send parental access mail
+Parental access mail sent successfully
+Acquiring license
+Action
+Support actions
+Parental activation failure
+Dear @@NICK@@,    You are requesting to change the parental control setting to:     Age: @@RATING@@  @@NEWPASSWORD@@    Please click on the following link to activate your new parental control setting:  @@URL@@/validate.aspx?ref=@@REF@@    Thank You,  The HBO GO team
+New parental control settings
+New password
+Parental control: customer does not exist
+Parental control mail sent successfully
+Success parental control activation
+Activation success!
+Current password:
+Add filter
+Add new
+Add to reminder
+Add to watchlist
+Anonymus
+E-mail
+Customer #
+IP address
+Name
+Device ID
+From
+Gender
+Female
+Male
+Customer support
+Incoming questions
+Knowledge base
+Log files
+Messages
+HBO GO news
+Playback issue reports
+Support
+Tickets
+To do
+Support
+Operator #
+Search
+To
+Adventure
+Agree
+Activation code
+Please provide activation code you will find in HBO GO section after login to My AIM account.
+Airplay playback is active
+Album flash
+See all
+All authorized operators
+See all
+See all
+See all
+0
+Amateur
+America undercover
+and
+Animation
+Anthology
+Customer ID
+Activation Key
+HBO GO
+Dear @@NAME@@!    New test application is available to download.    Application platform: @@PLATFORM@@  Version: @@VERSION@@    Follow this link to install:   @@LINK@@    ChangeLog:  @@CHANGELOG@@      ---  This download link will expire in: @@EXPIRY@@
+New HBO Test Application Available
+The application is restarting
+Archaeology
+Are you sure?
+Are you sure? You will have to wait 4 hours to register new device.
+Are you sure? You will have only {0} more changes for this month.
+Login
+Assaulted nuts
+Client ID Number
+Your unique number used to identify eBOK service. This number you can find on your invoice or please contact our Customer Service Office 67 350 90 00
+Password
+It's a code you use to login into eBOK service
+Astronomy
+Audio
+Registration from an IP address not allowed. Registration denied.
+Authentication
+Available audiotracks
+You have {0} more avaiable device(s).
+Available from {0}
+Available languages
+Available now
+Available subtitles
+Available to
+Available until {0}
+Aviation
+A-Z
+A-Z list
+« Back
+Back to application
+Back to menu
+HBO Holding Zrt.
+in App Store
+in Google Play Store
+Preview Android
+Preview iOS
+Free
+HBO GO
+View
+Baseball
+Basketball
+Behind the scenes
+Benny Hill
+Berenstain Bears
+Biography
+Birth year
+Birth year
+Birth year is invalid
+Birth year is missing
+Username for Moj B.net
+Enter username you use to access Moj B.net.
+Password for Moj B.net
+Enter password you use to access Moj B.net.
+Boardwalk Empire
+Boardwalk Empire S02
+About HBO
+©2013 HBO, all rights reserved
+©2013 Home Box Office. Inc. All Rights Reserved. This website may contain adult content.
+Legal
+Privacy
+Terms
+Boxing
+Back
+Manage device
+Change
+next
+Ok
+Space
+Change password
+prev
+Save
+Send
+Space
+Buffering
+Buffering ({0}%)
+Burlesque
+Cabaret
+Cancel
+Candid candid camera
+Cast
+Categories
+Cestina
+Chart show
+Choose episode
+- Choose operator -
+Choose season
+Cinemax comedy experiment
+Cinemax sessions
+Circus
+Claim #
+Classic
+Clip show
+Clipshow
+Close
+Close
+Close date
+Closed
+Closed tickets
+Collections
+College
+Comedy
+Comedy playhouse
+Comic
+Coming attractions
+coming up
+Comment
+You must {0} or {1} to add comments
+Sign in
+Sign up
+Write a comment
+Comments
+Everything is all right!
+Compatibility check was successfull, you can use HBO GO!
+Bandwidth
+Browser
+Compatibility check
+Cookies
+We will perform a system check now to see if your computer is capable to run HBO GO. This may take a few seconds. Please wait till you receive the detailed result, where we will tell you if you can start using HBO GO instantly or further actions are necessary before.&nbsp;
+Disabled
+Please make sure you have the <a href="http://www.microsoft.com/getsilverlight" target="_blank">latest version</a> of Silverlight browser plugin installed!
+Please make sure you enabled Cookies. To edit the related settings please look up the preferences menu of your browser application.
+Enable JavaScript in your browser!
+Enabled
+Compatibility test failed
+Slow connection!
+Obsolete browser!
+Cookies are disabled!
+JavaScript error!
+Sistemul de operare nu este acceptat!
+Inadequate Silverlight plugin!
+Installed
+JavaScript
+Not installed or need to be updated
+Not supported
+Please make sure you are using {0}!
+Please make sure you are using an up-to-date, supported browser. You can find the list of currently supported browser applications <a href="./support.aspx">here</a>!
+Please make sure you are using a proper version of Microsoft Windows or Apple OS. Please click <a href="./support.aspx">here</a> to see the list of supported operating systems.
+Operating system
+Possible solution
+Processing...
+Reason
+Silverlight 5
+Please make sure your internet connection meets the <a href="./support.aspx">minimum requirements</a> (500kb/s)!
+Supported
+Compatibility test
+<p>Please make sure you enabled JavaScript or please use a <a href="support.aspx">supported browser</a>.</p>
+Computer
+Concert
+You may have started a new playback on another device. Only one concurrent stream is allowed to playback in your account.
+Confirm e-mail address
+Connection lost
+Connectivity check
+Measure your network bandwidth for the playback.
+Bandwidth
+Check
+App could not detect any internet connection at this moment. Please quit from the app and try it later.
+The following menu can be tested, whether it meets your mobile device playback parameters.
+Check your device network connections.
+Network
+HBO GO server availability test
+HBO GO server infrastructure
+Consumer reports
+Contact

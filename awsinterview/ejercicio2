@@ -1,0 +1,45 @@
+public Org_Employee isValid(Org_Employee ceo, Org_Employee employee1, Org_Employee employee2) {
+ArrayList<Org_Employee> reports1 = new ArrayList<Org_Employee>();
+ArrayList<Org_Employee> reports2 = new ArrayList<Org_Employee>();
+if (contiene(ceo.getReports(),employee1) || (contiene(ceo.getReports(),employee2)){
+return null;
+}
+Boolean encontrado =false;
+buscar(ceo, employee1, reports1,encontrado);
+encontrado =false;
+buscar(ceo, employee2, reports2,encontrado);
+
+for(int i=0; i<reports1.size(); i++){
+if (contiene(reports2, reports1.get(reports1.size()-1-i)))
+return reports1.get(reports1.size()-1-i);
+}
+
+}
+
+private boolean contiene(ArrayList<Org_Employee> array, Org_Employee empl){
+foreach (Org_Employee empleado: array) {
+if (empleado.getId() == empl.getId())
+return true;
+}
+return false;
+}
+
+private boolean buscar(Org_Employee ceo, Org_Employee employee1, ArrayList<Org_Employee> reports1, Boolean encontrado) {
+if (ceo.getReports() == null){
+return false;
+}
+foreach (Org_Employee manager : ceo.getReports()){
+if (encontrado)
+return true;
+reports1.add(manager);
+if(contiene(manager.getReports(), employee1)){
+encontrado=true;
+return true;
+}
+else
+if (!buscar(manager, employee1, reports1, encontrado)){
+reports1.remove(reports1.size()-1);
+}
+}
+return false;
+}
