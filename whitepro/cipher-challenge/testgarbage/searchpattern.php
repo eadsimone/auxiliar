@@ -7,20 +7,19 @@
  */
 
 
-$myFile = "./encrypted.txt";
-$lines = file($myFile);
+$encriptedFilePath = "./encrypted.txt";
+//$lines = file($myFile);
 
-$trimmed = file($myFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+$encriptedFile = file($encriptedFilePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+
+$plainFilePath = "./plain.txt";
+//$lines = file($myFile);
+
+$plainFile = file($plainFilePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
 
-$handle = fopen("./encrypted.txt", "r");
-
-$line = fgets($handle);
-
-while ($userinfo = fscanf($handle, "%s\t%s\t%s\n")) {
-    list ($name, $profession, $countrycode) = $userinfo;
-    //list ($name, $profession, $countrycode) = $userinfo;
-    echo $userinfo;
-
+$max = sizeof($encriptedFile);
+for($i = 0; $i < $max;$i++)
+{
+    $trimmed = trim($encriptedFile[$i]);
 }
-fclose($handle);
