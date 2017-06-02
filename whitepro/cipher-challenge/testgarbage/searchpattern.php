@@ -34,6 +34,7 @@ function getCode ($str) {
         "!" => "E",
         ":" => "D",
         "?" => "Q",
+        "'" => "C",
     );
 
     $cont=0;
@@ -50,6 +51,8 @@ function getCode ($str) {
     }
     if ( $result === "") {
         $result=$cont;
+    } else if ( $cont !== 0) {
+        $result.=$cont;
     }
     return $result;
 
@@ -60,20 +63,20 @@ ini_set('max_execution_time', 300);
 $max = sizeof($encriptedFile);
 $maxPlainFile = sizeof($plainFile);
 
-//$max = 1000;
-//$maxPlainFile = 1000;
+
+$maxPlainFile = 10000;
 
 for($i = 0; $i < $max; $i++)
 {
     $trimmed = trim($encriptedFile[$i]);
-    //$lineOfEncript = (string) getCode($trimmed);
-    $lineOfEncript = getCode($trimmed);
+    $lineOfEncript = (string) getCode($trimmed);
+    //$lineOfEncript = getCode($trimmed);
 
     for($j = 0; $j < $maxPlainFile; $j++)
     {
         $trimmedPlain = trim($plainFile[$j]);
-        //$lineOfPlain = (string) getCode($trimmedPlain);
-        $lineOfPlain = getCode($trimmedPlain);
+        $lineOfPlain = (string) getCode($trimmedPlain);
+        //$lineOfPlain = getCode($trimmedPlain);
 
         If ($lineOfEncript === $lineOfPlain) {
             echo "posible valor para crear table <br>";
