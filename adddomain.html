@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title of the document</title>
+    <script   src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+
+        jQuery(document).ready(function () {
+            var counter = 0;
+
+            function loaddomain() {
+                var str = jQuery("#edit-widgets-domains").val();
+                var res = str.split("\n");
+
+                for (i = 0; i < res.length; i++) {
+                    var gg= jQuery.trim(res[i]);
+                    if ((gg !="") && (gg != "\n")) {
+//                        text += res[i] + "\n";
+                        addomain(gg);
+                    }
+                }
+            }
+
+            function addomain(currentvalue) {
+                counter = jQuery('#myTable tr').length - 2;
+                var newRow = jQuery("<tr>");
+                var cols = "";
+
+                cols += '<td><span id="name' + counter +'"></span><input disabled type="text" value="'+ currentvalue +'" name="name' + counter + '"/></td>';
+                cols += '<td><input id="name' + counter +'" type="button" class="ibtnDel"  value="Delete"></td>';
+                newRow.append(cols);
+
+                jQuery("table.order-list").append(newRow);
+            }
+
+            jQuery("#addrow").on("click", function () {
+                var currentvalue = jQuery('#inputaddrow').val();
+
+                addomain(currentvalue);
+                add2(currentvalue);
+                counter++;
+
+                jQuery('#inputaddrow').val('');
+            });
+
+            jQuery("table.order-list").on("change", 'input[name^="namedomain"]', function (event) {
+                calculateRow(jQuery(this).closest("tr"));
+                calculateGrandTotal();
+            });
+
+
+            jQuery("table.order-list").on("click", ".ibtnDel", function (event) {
+
+                var valueid =  jQuery(this).closest("input").attr("id");
+
+                var inpuname = "input[name^="+valueid+"]";
+
+                removefromtextarea(jQuery(inpuname).val());
+
+                jQuery(this).closest("tr").remove();
+                calculateGrandTotal();
+
+                counter -= 1;
+            });
+            loaddomain();
+
+            function calculateRow(row) {
+                var price = +row.find('input[name^="name"]').val();
+            }
+
+            function calculateGrandTotal() {
+                var grandTotal = 0;
+                jQuery("table.order-list").find('input[name^="name"]').each(function () {
+                    grandTotal += +jQuery(this).val();
+                });
+                jQuery("#grandtotal").text(grandTotal.toFixed(2));
+            }
+
+            function removefromtextarea(valor) {
+
+                var str = jQuery("#edit-widgets-domains").val();
+                var res = str.split("\n");
+                var text ='';
+
+                for (i = 0; i < res.length; i++) {
+                    var gg= jQuery.trim(res[i]);
+                    if ( (gg != valor) && (gg !="") && (gg != "\n")) {
+                        text += res[i] + "\n";
+                    }
+                }
+                jQuery("#edit-widgets-domains").val(text);
+            }
+
+            function add2(valor) {
+                jQuery("#edit-widgets-domains").val(function (_, oldVal) {
+                    return oldVal + valor +"\n";
+                });
+            }
+        });
+
+
+
+    </script>
+</head>
+
+<body>
+<table id="myTable" class="order-list">
+    <thead>
+    <tr>
+        <td>Domain</td>
+        <td >
+
+        </td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><input type="text" name="namedomain" id="inputaddrow" /></td>
+        <td><input type="button" id="addrow" value="Add Row" />
+        </td>
+    </tr>
+    </tbody>
+</table>
+<textarea disabled id="edit-widgets-domains" name="widgets_domains" cols="60" rows="5" class="form-textarea">malonso&#13;ale&#13;peche&#13;</textarea>
+</body>
+</html>
