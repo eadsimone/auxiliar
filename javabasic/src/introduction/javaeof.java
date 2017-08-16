@@ -51,4 +51,54 @@ public class javaeof {
         }
 
     }
+
+    //------------------------------------------------------
+    static int[] getMinimumDifference(String[] a, String[] b) {
+        int[] answer = new int[a.length];
+        for (int i=0 ; i<a.length ; i++){
+            answer[i] = areAnagrams(a[i], b[i]);
+        }
+        return answer;
+    }
+
+    public static int areAnagrams(String a, String b){
+        int changes = 0;
+        if (a.length()!=b.length())
+            return -1;
+        else {
+            char[] word1 = a.replaceAll("[\\s]", "").toCharArray();
+            char[] word2 = b.replaceAll("[\\s]", "").toCharArray();
+            Arrays.sort(word1);
+            Arrays.sort(word2);
+            int indice = 0;
+            for (int i = 0 ; i<a.length(); i++) {
+                char letra = word1[i];
+                if (indice >= b.length()){
+                    changes = changes + a.length() - i ;
+                    break;
+                }
+                for (int i2=indice ; i2 < b.length(); i2++){
+                    if (word2[i2] == letra) {
+                        indice = i2+1;
+                        break;
+                    } else
+                    if (word2[i2] > letra) {
+                        changes++;
+                        indice = i2 ;
+                        break;
+                    }
+                    indice=i2;
+                    if (a.length()-1 == i2)
+                        changes++;
+                }
+            }
+        }
+        return changes;
+    }
+
+    //------------------------------------------------------
+
+
 }
+
+

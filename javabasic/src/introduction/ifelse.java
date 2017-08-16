@@ -76,4 +76,127 @@ public class ifelse {
         System.out.println(ans);
 
     }
+
+    static int[] counts(int[] nums, int[] maxes) {
+        int count;
+        int position = -1;
+        sort(nums);
+        int[] answer = new int[maxes.length];
+        for (int a: maxes) {
+            position++;
+            count = 0;
+            for (int b : nums){
+                if (a>=b)
+                    count++;
+                else
+                    break;
+            }
+            answer[position]=count;
+        }
+        return answer;
+    }
+
+    //use a mergeSort algorithm to reduce the complexity
+    public static void sort(int input[]){
+        sort(input, 0, input.length-1);
+    }
+
+    private static void sort(int input[], int low, int high){
+        if(low >= high){
+            return;
+        }
+        int middle = (low + high)/2;
+        sort(input, low, middle);
+        sort(input, middle+1, high);
+        sortedMerge(input,low,high);
+    }
+
+    private static void sortedMerge(int input[], int low, int high){
+        int middle = (low+high)/2;
+        int temp[] = new int[high-low+1];
+        int i = low;
+        int j = middle+1;
+        int r = 0;
+        while(i <= middle && j <= high){
+            if(input[i] <= input[j]){
+                temp[r++] = input[i++];
+            }else{
+                temp[r++] = input[j++];
+            }
+        }
+        while(i <= middle){
+            temp[r++] = input[i++];
+        }
+
+        while(j <= high){
+            temp[r++] = input[j++];
+        }
+        i = low;
+        for(int k=0; k < temp.length;){
+            input[i++] = temp[k++];
+        }
+    }
+
+
+    //-------------------------------------------
+    static int[] counts(int[] nums, int[] maxes) {
+        int count;
+        int position = -1;
+        sort(nums);
+        int[] answer = new int[maxes.length];
+        for (int a: maxes) {
+            position++;
+            count = 0;
+            for (int b : nums){
+                if (a>=b)
+                    count++;
+                else
+                    break;
+            }
+            answer[position]=count;
+        }
+        return answer;
+    }
+
+    //use a mergeSort algorithm to reduce the complexity
+    public static void sort(int input[]){
+        sort(input, 0, input.length-1);
+    }
+
+    private static void sort(int input[], int low, int high){
+        if(low >= high){
+            return;
+        }
+        int middle = (low + high)/2;
+        sort(input, low, middle);
+        sort(input, middle+1, high);
+        sortedMerge(input,low,high);
+    }
+
+    private static void sortedMerge(int input[], int low, int high){
+        int middle = (low+high)/2;
+        int temp[] = new int[high-low+1];
+        int i = low;
+        int j = middle+1;
+        int r = 0;
+        while(i <= middle && j <= high){
+            if(input[i] <= input[j]){
+                temp[r++] = input[i++];
+            }else{
+                temp[r++] = input[j++];
+            }
+        }
+        while(i <= middle){
+            temp[r++] = input[i++];
+        }
+
+        while(j <= high){
+            temp[r++] = input[j++];
+        }
+        i = low;
+        for(int k=0; k < temp.length;){
+            input[i++] = temp[k++];
+        }
+    }
+
 }
