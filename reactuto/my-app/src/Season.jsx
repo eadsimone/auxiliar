@@ -1,92 +1,62 @@
 import React, { Component } from 'react';
-// import API from './constants'; 
+import { API_URL } from './Constants'; 
 import $ from 'jquery';
 
-import Driver from './Driver';
-
-import { Col } from 'react-bootstrap'
-import { Grid } from 'react-bootstrap';
-import { Row } from 'react-bootstrap';
+import Race from './Race';
 import { Table } from 'react-bootstrap';
 
 
 class Season extends Component  {
     constructor(props) {
         super(props);
-
-
-        this.state = {race: []};
+        this.state = {race: [],winnerOfYear:''};
     }
 
     componentDidMount() {
         this.SeasonList();
+        this.WinnerOfYear();
     }
 
     SeasonList() {
-        return $.getJSON('http://ergast.com/api/f1/' + this.props.year + ".json")
+        return $.getJSON( API_URL + this.props.year + ".json")
             .then((data) => {
                 this.setState({ race: data.MRData.RaceTable.Races });
             });
     }
 
+    WinnerOfYear() {
+        return $.getJSON( API_URL + this.props.year + "/driverStandings/1.json")
+            .then((data) => {
+                this.setState({ winnerOfYear: data.MRData.StandingsTable.StandingsLists[0].DriverStandings });
+            });
+    }
+
     render() {
+
         const races = this.state.race.map((item, i) => {
-
-            // return <div>
-            //     <h1>{item.raceName}</h1>
-            //     <span>{item.Circuit.circuitName}</span>
-            //     <Driver item={item} key={item}/>
-            // </div>
-
-            // return <div>
-            //     <Col xs={12} md={4}><h1>{item.raceName}</h1></Col>
-            //     <Col xs={6} md={4}> <span>{item.Circuit.circuitName}</span></Col>
-            //     <Col xs={6} md={4}> <span><Driver item={item} key={item}/></span></Col>
-            // </div>
-
-            
-            return <div>
-                <tr>
-                    <td>{i}</td>
-                    <td>{item.raceName}</td>
-                    <td>{item.Circuit.circuitName}</td>
-                    <td><Driver item={item} key={item}/></td>
-                </tr>
-                </div>
-
-
-
+            const winnerDriver = (this.state.winnerOfYear && this.state.winnerOfYear[0].Driver.driverId) ? this.state.winnerOfYear[0].Driver.driverId : null ;
+            return (
+                <Race winnerOfYear={winnerDriver} raceItem={item} key={i}></Race>
+            );
         });
 
-        // return <div id="layout-content" className="layout-content-wrapper">
-        //     <div className="panel-list">{ races }</div>
-        // </div>
-
-            // return <div>
-            //     <Grid>
-            //         <Row className="show-grid">
-            //             { races }
-            //         </Row>
-            //         </Grid>
-            // </div>
-
-        return <div>
-            <Table striped bordered condensed hover>
-                <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Race Name</th>
-                    <th>Circuit Name</th>
-                    <th>Driver name</th>
-                </tr>
-                </thead>
-                <tbody>
-
-                    { races }
-
-                </tbody>
-            </Table>
-        </div>
+        return (
+            <div>
+                <Table bordered condensed hover>
+                    <thead>
+                    <tr>
+                        <th># Round</th>
+                        <th>Race Name</th>
+                        <th>Circuit Name</th>
+                        <th>Driver name</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        { races }
+                    </tbody>
+                </Table>
+            </div>
+        )
     }
 }
 
