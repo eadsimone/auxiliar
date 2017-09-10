@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import $ from 'jquery';
 
 import Driver from './Driver';
+import ConstantsList from './Constants';
 
 import { Col } from 'react-bootstrap'
 import { Grid } from 'react-bootstrap';
@@ -15,47 +16,45 @@ class Season extends Component  {
         super(props);
 
 
-        this.state = {race: []};
+        this.state = {race: [],winnerOfYear:''};
+
     }
 
     componentDidMount() {
         this.SeasonList();
+        this.WinnerOfYear();
+        console.log('algo');
+
     }
 
     SeasonList() {
+        //ConstantsList.API_URL
         return $.getJSON('http://ergast.com/api/f1/' + this.props.year + ".json")
             .then((data) => {
                 this.setState({ race: data.MRData.RaceTable.Races });
             });
     }
 
+    WinnerOfYear() {
+        return $.getJSON('http://ergast.com/api/f1/' + this.props.year + "/driverStandings/1.json")
+            .then((data) => {
+                this.setState({ winnerOfYear: data.MRData.StandingsTable.StandingsLists[0].DriverStandings });
+            });
+    }
+
     render() {
         const races = this.state.race.map((item, i) => {
+        const winnerDriver = (this.state.winnerOfYear[0].Driver.driverId) ? this.state.winnerOfYear[0].Driver.driverId : null ;
+        //const winnerDriver ='hamilton';
 
-            // return <div>
-            //     <h1>{item.raceName}</h1>
-            //     <span>{item.Circuit.circuitName}</span>
-            //     <Driver item={item} key={item}/>
-            // </div>
-
-            // return <div>
-            //     <Col xs={12} md={4}><h1>{item.raceName}</h1></Col>
-            //     <Col xs={6} md={4}> <span>{item.Circuit.circuitName}</span></Col>
-            //     <Col xs={6} md={4}> <span><Driver item={item} key={item}/></span></Col>
-            // </div>
-
-            
-            return <div>
+            return (
                 <tr>
                     <td>{i}</td>
                     <td>{item.raceName}</td>
                     <td>{item.Circuit.circuitName}</td>
-                    <td><Driver item={item} key={item}/></td>
+                    <td><Driver winner={winnerDriver} item={item} key={item}/></td>
                 </tr>
-                </div>
-
-
-
+            );
         });
 
         // return <div id="layout-content" className="layout-content-wrapper">
@@ -74,7 +73,7 @@ class Season extends Component  {
             <Table striped bordered condensed hover>
                 <thead>
                 <tr>
-                    <th>#</th>
+                    <th># Round</th>
                     <th>Race Name</th>
                     <th>Circuit Name</th>
                     <th>Driver name</th>

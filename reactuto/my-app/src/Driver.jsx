@@ -27,14 +27,17 @@ class Driver extends Component  {
     render() {
         const races = this.state.result.map((item, i) => {
 
+            let wDriver = this.props.winner;
+            let DriveForRound  = item.Driver.driverId;
+            let highlight = (wDriver == DriveForRound) ? 'success' : '';
+
             return <div>
-                <h1>{item.Driver.familyName}</h1>
-                {/*<span>{item.Driver.driverId}</span>*/}
+                <strong>{item.Driver.familyName}</strong>
             </div>
         });
 
-        return <div id="layout-content" className="layout-content-wrapper">
-            <div className="panel-list">{ races }</div>
+        return <div id="name">
+            { races }
         </div>
     }
 }

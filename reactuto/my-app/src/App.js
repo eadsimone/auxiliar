@@ -5,20 +5,22 @@ import './App.css';
 import List from './List';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <List />
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div className="App">
+                <div className="App-header">
+                    <img src="https://www.mobiquityinc.com/hs-fs/hubfs/si-images/global/Mobiquity-Logo.png" className="" alt="logo" />
+                    <br /><img src={logo} className="App-logo" alt="logo" />
+                    <h2>Demo Project Based on React</h2>
+                </div>
+                <p className="App-intro">
+                    Following you can find a list that shows the F1 world
+                    champions starting from 2005 until 2015.
+                </p>
+                <List />
+            </div>
+        );
+    }
 }
 
 export default App;

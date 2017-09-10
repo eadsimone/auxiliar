@@ -63,7 +63,7 @@ class List extends Component  {
 
     return (
 			<div>
-				<h1>My List</h1>
+				<h1>List of F1 World Champions</h1>
 				{/*{buttonsInstance}*/}
 
 
