@@ -14,7 +14,6 @@ class List extends Component  {
 	render() {
 	    return (
 				<div>
-<<<<<<< HEAD
 					<h1>List of F1 World Champions</h1>
 					<div>
 					{
@@ -29,59 +28,6 @@ class List extends Component  {
 							})
 					}
 					</div>
-=======
-					<Button onClick={ ()=> this.setState({ open1: !this.state.open1 })}>
-						click
-					</Button>
-					<Collapse in={this.state.open1}>
-						<div>
-							<Well>
-								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-								Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-							</Well>
-						</div>
-					</Collapse>
-				</div>
-
-				<div>
-					<Button onClick={ ()=> this.setState({ open2: !this.state.open2 })}>
-						click
-					</Button>
-					<Collapse in={this.state.open2}>
-						<div>
-							<Well>
-								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-								Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-							</Well>
-						</div>
-					</Collapse>
-				</div>
-
-			</div>
-
-        );
-
-    return (
-			<div>
-				<h1>List of F1 World Champions</h1>
-				{/*{buttonsInstance}*/}
-
-
-				<div>
-
-				{
-					this.state.years.map(function(year){
-						// return <Season year={year} key={year}/>
-					const panel = year;
-                        return <PanelGroup>
-							<Panel collapsible header={panel} eventKey="{year}">
-								<Season year={year} key={year}/>
-							</Panel>
-						</PanelGroup>
-
-					})
-				}
->>>>>>> 4b982725c126212e6328029e08396a854c2ffb91
 				</div>
 			);
 		}
