@@ -110,30 +110,31 @@ console.log(vowelsandconsonant(str.trim().split('')));*/
 // ​	​{a, b, c}	​3
 //  ​{b, a, b, a}	​2
 
-
-function setOfLetter(arrayofletter){
-
-    arrayofletter = arrayofletter.replace(/[{()}]/g, '');
-
-    var resultDistintA = [];
-    var res = arrayofletter.split(",");
-
-    for (var i=0;i< res.length ; i++) {
-         if (resultDistintA.indexOf(res[i]) == -1){
-             resultDistintA.push(res[i]);
-         }
-    }
-    return resultDistintA.length;
-}
-
-var aletter = "{a,b,c}";
-var aletter = "{b,a,b,b,a}";
-
-console.log(setOfLetter(aletter));
+//
+// function setOfLetter(arrayofletter){
+//
+//     arrayofletter = arrayofletter.replace(/[{()}]/g, '');
+//
+//     var resultDistintA = [];
+//     var res = arrayofletter.split(",");
+//
+//     for (var i=0;i< res.length ; i++) {
+//          if (resultDistintA.indexOf(res[i]) == -1){
+//              resultDistintA.push(res[i]);
+//          }
+//     }
+//     return resultDistintA.length;
+// }
+//
+// var aletter = "{a,b,c}";
+// var aletter = "{b,a,b,b,a}";
+//
+// console.log(setOfLetter(aletter));
 
 //-------------------------------------------------------------------------------------------------
 // Steve and a Prime Number
-// Steve is learning prime numbers at school. A number is called prime if it has two different dividers: one and itself. Steve was given a homework to check if numbers n and m are prime or not, and if m follows n in a sequential list of prime numbers.
+// Steve is learning prime numbers at school. A number is called prime if it has two different dividers: one and itself.
+// Steve was given a homework to check if numbers n and m are prime or not, and if m follows n in a sequential list of prime numbers.
 // ​
 // Input
 // A single line contains two numbers - n and m. It's guaranteed that n is a prime number.
@@ -149,3 +150,39 @@ console.log(setOfLetter(aletter));
 // ​	​Input	​Output
 //   ​	​3 5	​YES
 //    ​7 11	​YES
+
+
+function isPrime(value) {
+    for(var i = 2; i < value; i++) {
+        if(value % i === 0) {
+            return false;
+        }
+    }
+    return value > 1;
+}
+
+//given a prime number return next prime
+function nextPrime(n) {
+    var i= n +1;
+    for (i; i <=50; i++){
+        if( isPrime(i) ){
+            return i;
+            break;
+        }
+    }
+    return 0;
+}
+
+function stevePrimeNumber(n, m) {
+
+    if( (n % 2) == 1 && (m === nextPrime(n)) ){
+        return "YES"
+    } else {
+        return "NO";
+    }
+
+}
+
+console.log(stevePrimeNumber(3,5));
+console.log(stevePrimeNumber(3,7));
+console.log(stevePrimeNumber(7,11));
