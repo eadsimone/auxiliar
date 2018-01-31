@@ -2,19 +2,6 @@
  * Created by edesimone on 24/01/18.
  */
 
-
-var a = ['one', 'two', 'three'];
-//"A man, a plan, a canal, Panama!", "Was it a car or a cat I saw?"
-var b = "A man, a plan, a canal, Panama!";
-
-a.reverse();
-//b.reverse();
-
-console.log(a); // ['three', 'two', 'one']
-console.log(b);
-
-var arrayOfStrings = b.split("");
-
 function palindrome(myString){
 
     /* remove special characters, spaces and make lowercase*/
@@ -26,11 +13,11 @@ function palindrome(myString){
     /* Check to see if myString is a Palindrome*/
     if(removeChar === checkPalindrome){
 
-        document.write("<div>"+ myString + " is a Palindrome <div>");
+       console.log("it is a palindrome");
     }else{
-
-        document.write("<div>" + myString + " is not a Palindrome </div>");
+        console.log("it is NOT a palindrome");
     }
 }
-// palindrome('"Oh who was it I saw, oh who?"')
-// palindrome('"Madam"')
+ palindrome('"Oh who was it I O saw, oh who?"')
+ palindrome('"Madam"');
+palindrome('"2,3,4,2"');
