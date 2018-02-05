@@ -9,7 +9,7 @@
 function vowelsAndConsonants(s) {
     let vowels= /[aeiou]/g;
     let consonant = /[aeiou]/g;
-    let arvowels,arconsonant = [];
+    var arvowels= [],arconsonant = [];
 
     for (let i=0 ; i< s.length; i++){
         if (s[i].search(vowels)!= -1 ){
@@ -21,15 +21,15 @@ function vowelsAndConsonants(s) {
 
     let conclusion = arvowels.concat(arconsonant);
 
-    for each (var item in conclusion) {
-        console.log(item);
+    for (let i=0;  i< conclusion.length; i++){
+        console.log(conclusion[i]);
     }
 
 }
 
 function main() {
-    const s = readLine();
-
-    vowelsAndConsonants(s);
+    //const s = readLine();
+    let ss ="javascriptloops";
+    vowelsAndConsonants(ss);
 }
-
+main();
