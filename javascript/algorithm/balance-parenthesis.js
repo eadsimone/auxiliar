@@ -1,7 +1,10 @@
+"use strict";
 /**
  * Created by edesimone on 31/01/18.
  */
 // https://github.com/robhitt/balance-parenthesis-js/blob/master/index.js
+
+
 
 var tokens = [ ['{','}'] , ['[',']'] , ['(',')'] ];
 
