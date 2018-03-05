@@ -49,3 +49,29 @@ palindrome1('"2,3,4,2"');
 palindrome('"Oh who was it I O saw, oh who?"')
 palindrome('"Madam"');
 palindrome('"2,3,4,2"');
+
+//------------------------------------------------
+
+Array.prototype.toPalindrome = function() {
+        const result = this.slice();
+        for ( var i = this.length - 2; i >= 0; --i ) {
+            result.push( this[i] );
+        }
+        return result;
+    }
+
+ [1, 2, 3].toPalindrome()
+//      [1, 2, 3, 2, 1]
+
+ [1, 2, 3].toPalindrome().toPalindrome()
+// [1, 2, 3, 2, 1, 2, 3, 2, 1]
+
+//----------------------------------------------------
+function factorial(n) {
+    if (n === 0) {
+        return 1;
+    }
+
+    // This is it! Recursion!!
+    return n * factorial(n - 1);
+}

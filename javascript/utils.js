@@ -31,12 +31,19 @@ function requestTouristItems(){
 
 };
 
+//CLONE Array
+var clone = myArray.slice(0);
 
 //array map
 var array1 = [1, 4, 9, 16];
 
 // pass a function to map
 const map1 = array1.map(x => x * 2);
+
+
+var new_array = arr.map(function callback(currentValue[, index[, array]]) {
+    // Return element for new_array
+}
 
 //(if you only want to know if it exists, use the similar test()
 //SEARCH
@@ -55,3 +62,11 @@ var found = array1.find(function(element) {
 
 console.log(found);
 // expected output: 12
+
+{
+    "name":"John",
+    "age":30,
+    "cars":[ "Ford", "BMW", "Fiat" ]
+}
+var n = num.toString();
+var a = parseInt("10")
