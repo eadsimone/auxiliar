@@ -14,6 +14,7 @@ foo(); // `this` will refer to `window`
 */
 //When I try to pass this to a function it throws an error.
 
+/*
     function foo(this) {
         console.log(this);
     }
@@ -29,6 +30,12 @@ foo(); // `this` will refer to `window`
         console.log(that); //<-here is semicolon ';'
     }
     foo();  // undefined chrome console.
+*/
 
- If you understand  two cases descripted above may understand what happens here. For more information visit
- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this
+ // If you understand  two cases descripted above may understand what happens here. For more information visit
+ //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this
+function greaterThan(n) {
+    return m => m > n;
+}
+let greaterThan10 = greaterThan(10);
+console.log(greaterThan10(11));

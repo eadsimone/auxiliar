@@ -19,7 +19,14 @@ body {
     background-color:black;
     color:red;
 }
-.btn {
+/*.btn {*/
+    /*width: 25%;*/
+    /*height: 36px;*/
+    /*font-size: 18px;*/
+    /*margin: 0px;*/
+    /*float:left;*/
+/*}*/
+#btns > button {
     width: 25%;
     height: 36px;
     font-size: 18px;
